@@ -1,0 +1,22 @@
+JavaScrit: Js is  a versatile High level,scripting lanaguage used to add the inteactivity for the webpages and also its makes the websites dynamic
+1.Scripting Langauge- Is a type of programing language desigined to automate task,add functionalities
+2.Interpreter-Instead of translating all the code/prgm into machine code beforehand, an interpreter will read the code line by line and executes parallely at the runtime.
+3. Dynamically typed language: The varaibales types are defined/assigned at the runtime rather than the compile time. We need not to metion the type of the varaible in beforehans.
+4. Client Side lanaguage- runs directly inside a user's web browser - Ui,interactivity
+5. ServerSide- Run son the remote webserver(backend)-Business logic,fetching Database   queries
+6. Js is both client side and server side(Nodejs)
+
+7. Event Driven- Like user clicks the buttons,scrolls the page top to bottom
+
+We define internal js using <script> tag-Paired
+We deife extrenal css using <script src> where we deinf the path in the src-
+
+We need to use internal js or external js inisde the body and above the </body> To prevent blocking the page from rendering and to ensure that all the html elements are loaded before the js engine tries o interact with them.
+
+
+Javascript Engine- This is like a parse that complies and excutes the code.
+V8- Google
+SpiderMonker- Mozilla
+Jscore- Apple Safari
+
+
