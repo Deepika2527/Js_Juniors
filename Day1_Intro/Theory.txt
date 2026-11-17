@@ -1,22 +1,336 @@
-JavaScrit: Js is  a versatile High level,scripting lanaguage used to add the inteactivity for the webpages and also its makes the websites dynamic
-1.Scripting Langauge- Is a type of programing language desigined to automate task,add functionalities
-2.Interpreter-Instead of translating all the code/prgm into machine code beforehand, an interpreter will read the code line by line and executes parallely at the runtime.
-3. Dynamically typed language: The varaibales types are defined/assigned at the runtime rather than the compile time. We need not to metion the type of the varaible in beforehans.
-4. Client Side lanaguage- runs directly inside a user's web browser - Ui,interactivity
-5. ServerSide- Run son the remote webserver(backend)-Business logic,fetching Database   queries
-6. Js is both client side and server side(Nodejs)
+JAVASCRIPT – INTRODUCTION
 
-7. Event Driven- Like user clicks the buttons,scrolls the page top to bottom
+What is JavaScript?
 
-We define internal js using <script> tag-Paired
-We deife extrenal css using <script src> where we deinf the path in the src-
+JavaScript is a versatile, high-level, dynamically typed programming language primarily used to add interactivity and dynamic behavior to web pages and web applications.
 
-We need to use internal js or external js inisde the body and above the </body> To prevent blocking the page from rendering and to ensure that all the html elements are loaded before the js engine tries o interact with them.
+Example:
+Without JavaScript:
+User clicks a button -> nothing happens.
+
+With JavaScript:
+User clicks a button -> menu opens / message appears / data is validated / content changes.
 
 
-Javascript Engine- This is like a parse that complies and excutes the code.
-V8- Google
-SpiderMonker- Mozilla
-Jscore- Apple Safari
+1. SCRIPTING LANGUAGE
 
+A scripting language is a programming language commonly used to automate tasks and add behavior or functionality to applications.
+
+JavaScript was originally designed mainly for scripting web pages inside browsers.
+
+Example:
+
+document.getElementById("btn").onclick = function () {
+    alert("Button clicked!");
+};
+
+Here JavaScript is adding behavior to an existing HTML page.
+
+Important:
+Do not define scripting language as only "a language that automates tasks."
+Modern JavaScript is a full programming language used for frontend, backend, servers, APIs, applications, etc.
+
+
+2. INTERPRETER
+
+Traditional definition:
+An interpreter executes program code at runtime rather than requiring the entire program to be converted into machine code before execution.
+
+Modern JavaScript engines do not simply interpret JavaScript line by line. They use parsing, interpretation, compilation, JIT compilation, and optimization techniques.
+
+Developer-level definition:
+An interpreter executes program code at runtime, while modern JavaScript engines use both interpretation and compilation techniques to execute and optimize JavaScript.
+
+
+3. DYNAMICALLY TYPED LANGUAGE
+
+In a dynamically typed language, the type associated with a variable is determined at runtime, and the variable does not need an explicit type declaration.
+
+Example:
+
+let value = 10;
+
+value -> number
+
+Later:
+
+value = "Hello";
+
+value -> string
+
+The same variable can hold different types at different times.
+
+Compare:
+
+JavaScript:
+let x = 10;
+x = "Hello";
+
+Java:
+int x = 10;
+// x = "Hello";  // Error
+
+JavaScript -> Dynamically typed
+Java -> Statically typed
+
+
+4. CLIENT-SIDE LANGUAGE
+
+Client-side JavaScript runs in the user's web browser and is mainly responsible for UI behavior and interaction.
+
+Examples:
+- Button clicks
+- Form validation
+- Dropdowns
+- Modals
+- Animations
+- DOM manipulation
+- Changing HTML/CSS
+- Fetching data from APIs
+
+Example:
+
+button.addEventListener("click", function () {
+    document.body.style.backgroundColor = "yellow";
+});
+
+The browser executes this JavaScript.
+
+
+5. SERVER-SIDE JAVASCRIPT
+
+JavaScript can also run on a server.
+
+Example:
+Node.js
+
+Server-side JavaScript can handle:
+- Business logic
+- APIs
+- Authentication
+- Database operations
+- File handling
+- Server requests and responses
+
+Example architecture:
+
+Browser
+    |
+    v
+JavaScript
+    |
+    v
+HTTP Request
+    |
+    v
+Node.js Server
+    |
+    v
+Database
+    |
+    v
+Response
+    |
+    v
+Browser
+
+
+6. JAVASCRIPT IS BOTH CLIENT-SIDE AND SERVER-SIDE
+
+JavaScript
+    |
+    +---------------------+
+    |                     |
+    v                     v
+Client Side          Server Side
+Browser              Node.js
+    |                     |
+UI / DOM              Backend
+Events                APIs
+Forms                 Database
+
+Therefore:
+JavaScript can be used for both client-side and server-side development.
+
+
+7. EVENT-DRIVEN
+
+JavaScript is heavily event-driven, especially in browser applications.
+
+An event is something that happens in an application.
+
+Examples:
+- click
+- input
+- submit
+- scroll
+- mouseover
+- keydown
+
+Example:
+
+button.addEventListener("click", function () {
+    console.log("Button clicked");
+});
+
+Important concept:
+
+Event occurs
+    ->
+Event handler/function executes
+
+For example:
+
+User clicks button
+    ->
+click event occurs
+    ->
+JavaScript executes the associated function
+
+
+8. INTERNAL JAVASCRIPT
+
+Internal JavaScript means writing JavaScript code directly inside an HTML document using the <script> tag.
+
+Example:
+
+<script>
+    console.log("Hello JavaScript");
+</script>
+
+The <script> tag is a paired tag.
+
+
+9. EXTERNAL JAVASCRIPT
+
+External JavaScript means writing JavaScript in a separate .js file and connecting it to the HTML document.
+
+HTML:
+
+<script src="script.js"></script>
+
+JavaScript file (script.js):
+
+console.log("Hello JavaScript");
+
+The src attribute specifies the location/path of the external JavaScript file.
+
+
+10. WHERE SHOULD THE SCRIPT TAG BE PLACED?
+
+Traditional approach:
+
+<body>
+
+    <h1>Hello</h1>
+    <button id="btn">Click</button>
+
+    <script src="script.js"></script>
+</body>
+
+Why?
+The browser parses the HTML elements before executing the script, making DOM access straightforward.
+
+For example:
+
+document.getElementById("btn");
+
+Modern approach:
+
+<head>
+    <script src="script.js" defer></script>
+</head>
+
+The defer attribute tells the browser:
+- Download the JavaScript while parsing the HTML.
+- Execute the JavaScript after the HTML has been parsed.
+
+Therefore, do not say:
+"JavaScript must always be written before </body>."
+
+Better definition:
+JavaScript can be placed at the end of <body>, or an external script can be placed in <head> with defer to avoid blocking HTML parsing and ensure that the DOM is available when the script executes.
+
+
+11. JAVASCRIPT ENGINE
+
+A JavaScript engine is a program that reads, parses, compiles/optimizes, and executes JavaScript code.
+
+Basic flow:
+
+JavaScript Code
+    |
+    v
+Parsing
+    |
+    v
+Compilation / Interpretation
+    |
+    v
+Optimization
+    |
+    v
+Execution
+
+Important:
+The parser is only one part of the JavaScript engine.
+
+12. MAJOR JAVASCRIPT ENGINES
+
+V8
+- Developed by Google.
+- Used by Google Chrome and Node.js.
+
+SpiderMonkey
+- Developed by Mozilla.
+- Used by Firefox.
+
+JavaScriptCore
+- Developed by Apple.
+- Used by Safari.
+
+
+13. IMPORTANT MENTAL MODEL
+
+HTML -> Structure
+CSS -> Presentation / Styling
+JavaScript -> Behavior / Logic
+
+Example:
+
+HTML:
+Creates a button.
+
+CSS:
+Styles the button.
+
+JavaScript:
+Defines what happens when the user clicks the button.
+
+
+JAVASCRIPT DAY-1 TEACHING FLOW
+
+1. What is JavaScript?
+2. Why JavaScript?
+3. What can JavaScript do?
+4. Scripting Language
+5. Dynamically Typed Language
+6. Client-Side JavaScript
+7. Server-Side JavaScript
+8. Event-Driven
+9. Internal JavaScript
+10. External JavaScript
+11. Script Placement
+12. defer
+13. JavaScript Engine
+14. V8
+15. SpiderMonkey
+16. JavaScriptCore
+
+
+ONE-LINE SUMMARY
+
+HTML gives structure.
+CSS gives presentation.
+JavaScript gives behavior and logic.
 
