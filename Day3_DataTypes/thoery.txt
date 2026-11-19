@@ -1,0 +1,26 @@
+DataTypes:
+Dt is nothing but what type of data is being stored in the varaible is called a Dt
+these are categorised into 2 DataTypes
+
+Primitive
+Holds a single value-Homogenous
+Immutable
+
+Example:
+Num
+string
+boolean
+undefined
+null
+bigInt
+Symbol
+
+Non-Primitive-
+Holds a heteorgenous collections values
+Mutable
+
+Examples:
+Array
+Objects
+Array of Objects
+Functions
